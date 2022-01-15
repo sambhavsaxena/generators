@@ -66,7 +66,7 @@ void writetofile(int arr[], int n)
 int main()
 {
     int n;
-    cout << "Enter the number of test inputs to be generated: ";
+    cout << "Enter the number of test case inputs required: ";
     cin >> n;
     int arr[n];
     for (int i = 0; i < n; i++)
