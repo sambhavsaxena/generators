@@ -1,2 +1,2 @@
 # testcase-engines
-A set of CLI test case generators for competitive programmers.
+A set of CLI language files for different kind of operations. 
