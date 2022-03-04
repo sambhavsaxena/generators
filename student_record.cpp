@@ -68,6 +68,26 @@ void delete_node(Node **head)
     }
 }
 
+void search(Node *head)
+{
+    int x;
+    cout << "Enter the roll number of the student you want to search:\t";
+    cin >> x;
+    Node *current = head;
+    while (current != NULL)
+    {
+        if (current->roll == x)
+        {
+            cout << "Roll: " << current->roll << endl;
+            cout << "Age: " << current->age << endl;
+            cout << "Gender: " << current->gender << endl;
+            cout << "Name: " << current->name << endl;
+            break;
+        }
+        current = current->next;
+    }
+}
+
 void printlist(Node *head)
 {
     while (head != NULL)
@@ -98,9 +118,10 @@ int main()
         cout << "Enter the action you wish to perform:\n\n";
         cout << "Enter '1' for Adding a student record to the current list\n";
         cout << "Enter '2' for Deleting a student record from the current list\n";
-        cout << "Enter '3' for Printing the current list to the console\n";
-        cout << "Enter '4' for Displaying data in the file\n";
-        cout << "Enter '5' for Saving the entire list record to a file\n";
+        cout << "Enter '3' for Searching a student record from the current list\n";
+        cout << "Enter '4' for Printing the current list to the console\n";
+        cout << "Enter '5' for Displaying data in the file\n";
+        cout << "Enter '6' for Saving the entire list record to a file\n";
         cin >> input;
         if (input == 1)
         {
@@ -114,9 +135,13 @@ int main()
         }
         else if (input == 3)
         {
-            printlist(head);
+            search(head);
         }
         else if (input == 4)
+        {
+            printlist(head);
+        }
+        else if (input == 5)
         {
             string t;
             ofstream o("output.txt", ios::app);
@@ -128,7 +153,7 @@ int main()
                 cout << t << endl;
             }
         }
-        else if (input == 5)
+        else if (input == 6)
         {
             writetofile(head);
             cout << "Saved✓" << endl;
