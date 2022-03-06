@@ -70,7 +70,7 @@ void delete_node(Node **head)
 
 void search(Node *head)
 {
-    int x;
+    long long int x;
     cout << "Enter the roll number of the student you want to search:\t";
     cin >> x;
     Node *current = head;
